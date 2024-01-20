@@ -1,6 +1,6 @@
 # 🌟 algorithm-study
 
-싸피 11기 서울 10-1 알고리즘 스터디
+싸피 11기 서울 10-1 알고리즘 스터디!!!
 
 | 🍏 | 🍎 | 🍐 | 🍈 | 🥑 | 🥔 |
 | :--------: | :---------: | :---------: | :---------: | :---------: | :---------: |
@@ -8,7 +8,7 @@
 
 ## ✨ 진행 방법
 
-[How-To-Study.md](https://github.com/SSAFY-10-1/algorithm-study/blob/main/How-To-Study.md)
+진행 방법 : [How-To-Study.md](https://github.com/SSAFY-10-1/algorithm-study/blob/main/How-To-Study.md)
 
 ## 🍀 문제 목록
 
