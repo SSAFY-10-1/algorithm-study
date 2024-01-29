@@ -7,7 +7,7 @@ public class BOJ16236 {
     static final int MAX_INT = 21;
     static final int MAX_VAL = 401;
     static int n, result;
-    static int[][] a = new int[MAX_INT][MAX_INT];
+    static int[][] board = new int[MAX_INT][MAX_INT];
     static int[][] check = new int[MAX_INT][MAX_INT];
     static int shark_x, shark_y, eat_cnt, shark_size = 2;
     static int min_dist, min_x, min_y;
@@ -51,11 +51,11 @@ public class BOJ16236 {
                 int ny = cy + dy[i];
 
                 if (nx < 1 || nx > n || ny < 1 || ny > n) continue;
-                if (check[nx][ny] != -1 || a[nx][ny] > shark_size) continue;
+                if (check[nx][ny] != -1 || board[nx][ny] > shark_size) continue;
 
                 check[nx][ny] = check[cx][cy] + 1;
 
-                if (a[nx][ny] != 0 && a[nx][ny] < shark_size) {
+                if (board[nx][ny] != 0 && board[nx][ny] < shark_size) {
                     if (min_dist > check[nx][ny]) {
                         min_x = nx;
                         min_y = ny;
@@ -84,11 +84,11 @@ public class BOJ16236 {
 
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= n; j++) {
-                a[i][j] = scanner.nextInt();
-                if (a[i][j] == 9) {
+                board[i][j] = scanner.nextInt();
+                if (board[i][j] == 9) {
                     shark_x = i;
                     shark_y = j;
-                    a[i][j] = 0;
+                    board[i][j] = 0;
                 }
             }
         }
@@ -106,7 +106,7 @@ public class BOJ16236 {
                     eat_cnt = 0;
                 }
 
-                a[min_x][min_y] = 0;
+                board[min_x][min_y] = 0;
                 shark_x = min_x;
                 shark_y = min_y;
             } else {
