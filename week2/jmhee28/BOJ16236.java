@@ -2,7 +2,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class Main {
+public class BOJ16236 {
 
     static final int MAX_INT = 21;
     static final int MAX_VAL = 401;
