@@ -1,0 +1,127 @@
+
+public class LinkedList<E> {
+
+    Node<E> first;
+    Node<E> last;
+    private int size = 0;
+
+    public LinkedList() {
+        this.first = new Node<>(null, null, null);
+        this.last = new Node<>(null, null, null);
+        this.first.next = this.last;
+        this.last.prev = this.first;
+    }
+    private static class Node<E> {
+        E item;
+        Node<E> next;
+        Node<E> prev;
+
+        public Node(E item, Node<E> next, Node<E> prev) {
+            this.item = item;
+            this.next = next;
+            this.prev = prev;
+        }
+    }
+
+    // *********** Basic Func ******************
+
+    // 리스트 요소 개수를 반환
+    public int size() {
+        return this.size;
+    }
+
+    // 리스트가 비어있는 지 확인
+    public boolean isEmpty() {
+        return this.size == 0;
+    }
+
+    // index 위치의 노드를 반환하는 메소드
+    public E get(int index) {
+        Node cur = this.first;
+        for (int i = 0; i < index; i++) {
+            cur = cur.next;
+        }
+        return (E) cur;
+    }
+
+    // 리스트에 특정 요소가 있는지 확인하는 메소드
+    public boolean contains(Object obj) {
+        return false;
+    }
+
+    // 리스트를 배열로 반환하는 메소드
+    public Object[] toArray() {
+        Object[] arr = new Object[this.size];
+        Node cur = this.first;
+        for (int i = 0; i < this.size; i++) {
+            arr[i] = cur;
+            cur = cur.next;
+        }
+        return arr;
+    }
+
+    // ************* Add Func ***************
+
+    // 리스트의 맨 앞에 노드를 추가하는 메소드
+    public void addFirst(E data){
+
+        Node newNode = new Node(data, this.first, null);
+        this.first = newNode;
+
+        if (newNode.next == null) {
+            this.last = newNode;
+        }
+        this.size++;
+    }
+
+    // 리스트의 맨 뒤에 노드를 추가하는 메소드
+    public void addLast(E data) {
+        Node newNode = new Node(data, null, this.last);
+        this.last = newNode;
+
+        if (newNode.prev == null) {
+            this.first = newNode;
+        }
+        this.size++;
+    }
+
+    // 원하는 index 위치에 노드를 추가하는 메소드
+    public void add(int index, E data) {
+        Node cur = this.first;
+        for (int i = 0; i < index; i++) {
+            cur = cur.next;
+        }
+        Node newNode = new Node(data, cur, cur.prev);
+        cur.prev.next = newNode;
+        cur.prev = newNode;
+        this.size++;
+    }
+
+    // ********* Delete Func **************
+
+    // 리스트 맨 앞 노드를 제거하는 메소드
+    public void removeFirst() {
+        this.first = this.first.next;
+        this.first.prev = null;
+        this.size--;
+    }
+
+    // 리스트 맨 뒤 노드를 제거하는 메소드
+    public void removeLast() {
+        this.last = this.last.prev;
+        this.last.next = null;
+        this.size--;
+    }
+
+    // 리스트 index 위치의 노드를 제거하는 메소드
+    public void remove(int index) {
+        Node cur = this.first;
+        for (int i = 0; i < index; i++) {
+            cur = cur.next;
+        }
+        cur.prev.next = cur.next;
+        cur.next.prev = cur.prev;
+        this.size--;
+    }
+
+}
