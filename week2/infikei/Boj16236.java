@@ -54,7 +54,7 @@ public class Boj16236 {
     static int[][] board;
     static Shark babyShark;
     static int curTime = 0;
-    static Comparator<Point> cp = new Comparator<>() {
+    static Comparator<Point> cp = new Comparator<Point>() {
 
         @Override
         public int compare(Point p1, Point p2) {
@@ -139,11 +139,7 @@ public class Boj16236 {
     }
 
     static boolean isInBoard(int x, int y) {
-        if (x >= 0 && x < n && y >= 0 && y < n) {
-            return true;
-        }
-
-        return false;
+        return x >= 0 && x < n && y >= 0 && y < n;
     }
 
 }
