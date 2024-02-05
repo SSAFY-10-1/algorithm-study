@@ -21,3 +21,7 @@
 
 1. [아기상어 (백준16236)](https://www.acmicpc.net/problem/16236)
 2. 추가 예정
+
+### ❄️ 3주차 문제 목록
+1. [인구 이동 (백준16234)](https://www.acmicpc.net/problem/16234)
+2. [새로운 게임2 (백준17837)](https://www.acmicpc.net/problem/17837)
