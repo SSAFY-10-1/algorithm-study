@@ -32,11 +32,13 @@ public class DeleteTree {
     public static void growTree() {
     	for (int i = 0; i <N; i++) {
 			for (int j = 0; j < N; j++) {
-				int blank = 0;
-				for (int k = 0; k < 4; k++) {
-					if(graph[i+dx[k]][j+dy[k]]==0) blank++;
+				if(graph[i][j]>0) {
+					int blank = 0;
+					for (int k = 0; k < 4; k++) {
+						if(graph[i+dx[k]][j+dy[k]]==0) blank++;
+					}
+					graph[i][j] += blank;
 				}
-				graph[i][j] += blank;
 			}
 		}
     }
