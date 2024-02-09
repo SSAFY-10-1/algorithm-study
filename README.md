@@ -19,7 +19,7 @@
 
 | 주차 | 문제 |
 | ---- | ---- |
-| Week 1 | [뱀 (백준 3190)](https://www.acmicpc.net/problem/3190) <br/> [치킨 배달 (백준 15686번)](https://www.acmicpc.net/problem/15686) <br/> |
+| Week 1 | [뱀 (백준 3190)](https://www.acmicpc.net/problem/3190) <br/> [치킨 배달 (백준 15686)](https://www.acmicpc.net/problem/15686) <br/> |
 | Week 2 | [아기상어 (백준 16236)](https://www.acmicpc.net/problem/16236) <br/> |
 | Week 3 | [인구 이동 (백준 16234)](https://www.acmicpc.net/problem/16234) <br/> [새로운 게임 2 (백준 17837)](https://www.acmicpc.net/problem/17837) <br/> |
 | Week 4 | [나무 박멸 (코드트리)](https://www.codetree.ai/training-field/frequent-problems/problems/tree-kill-all) <br/> |
