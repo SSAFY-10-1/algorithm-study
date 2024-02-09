@@ -1,184 +1,108 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Scanner;
+import java.util.*;
+import java.io.*;
 
-public class Boj17837 {
+public class DeleteTree {
+    // N = 격자 크기, M = 박멸 진행되는 수, K = 제초제 확산 범위, C = 제초제가 남아있는 년 수
+    static int N, M, K, C;
+    // Graph = 나무를 담을 2차원 격자
+    static int[][] graph;
+    // treeKillerMaps = 제초제가 남아있음을 표시하는 2차원 격자
+    static int[][] treeKillerMaps;
+    // M년 동안 박멸한 나무의 수를 저장하는 변수 = 정답을 출력 하는 변수
+    static int result = 0;
 
-    private static final int[] dy = {0, 0, -1, 1};
-    private static final int[] dx = {1, -1, 0, 0};
+    // dx & dy + inRange Func
+    static int[] dx = {-1, 0, 1, 0};
+    static int[] dy = {0, 1, 0, -1};
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int k = sc.nextInt();
+    public static boolean inRange(int x, int y) {
+        return ((0 <= x && x < N) && (0 <= y && y < N));
+    }
 
-        int[][] chess = new int[n][n];
-        Map<Location, List<Ware>> map = new HashMap<>();
+    public static class Position {
+        int x, y;
 
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                chess[i][j] = sc.nextInt();
-                map.put(new Location(i, j), new LinkedList<>());
-            }
+        public Position(int x, int y) {
+            this.x = x;
+            this.y = y;
         }
+    }
 
-        for (int i = 0; i < k; i++) {
-            map.get(new Location(sc.nextInt() - 1, sc.nextInt() - 1)).add(new Ware(i, sc.nextInt() - 1));
-        }
+    // <--------------- 구현 해야 할 메소드 ---------------->
+    public static void growTree() {
 
-        int result = 1;
+    }
 
-        loop:
-        for (int i = 0; i < 1000; i++) {
+    public static int[][] spreadTree() {
+        Deque<Integer> value = new ArrayDeque<>();
+        Deque<int[]> location = new ArrayDeque<>();
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                if (graph[i][j] > 0) {
+                    int count = 0;
+                    for (int k = 0; k < 4; k++) {
+                        int moveY = i + dy[k];
+                        int moveX = j + dx[k];
 
-            for (int j = 0; j < k; j++) {
-                InfoTarget target = findTarget(j, n, map);
-
-                Location location = target.location;
-                List<Ware> wares = target.wares;
-
-                int dir = wares.get(0).dir;
-
-                int moveY = location.y + dy[dir];
-                int moveX = location.x + dx[dir];
-
-                Location next = new Location(moveY, moveX);
-
-                if (!inMap(moveY, moveX, n) || chess[moveY][moveX] == 2) {
-                    if (dir == 0) {
-                        dir = 1;
-                    } else if (dir == 1) {
-                        dir = 0;
-                    } else if (dir == 2) {
-                        dir = 3;
-                    } else {
-                        dir = 2;
-                    }
-
-                    wares.get(0).dir = dir;
-
-                    moveY = location.y + dy[dir];
-                    moveX = location.x + dx[dir];
-
-                    next = new Location(moveY, moveX);
-
-                    if (!inMap(moveY, moveX, n) || chess[moveY][moveX] == 2) {
-                        map.get(location).addAll(wares);
-
-                        if (map.get(location).size() >= 4) {
-                            break loop;
+                        if (0 <= moveY && moveY < N && 0 <= moveX && moveX < N && graph[moveY][moveX] == 0
+                            && treeKillerMaps[moveY][moveX] == 0) {
+                            location.offer(new int[]{moveY, moveX});
+                            count++;
                         }
-                        continue;
-                    }
-                }
-
-                if (chess[moveY][moveX] == 0) {
-                    map.get(next).addAll(wares);
-                } else if (chess[moveY][moveX] == 1) {
-                    Collections.reverse(wares);
-                    map.get(next).addAll(wares);
-                }
-
-                if (map.get(next).size() >= 4) {
-                    break loop;
-                }
-            }
-            result++;
-        }
-        System.out.println(result >= 1000 ? -1 : result);
-    }
-
-    private static InfoTarget findTarget(int target, int n, Map<Location, List<Ware>> map) {
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                Location location = new Location(i, j);
-                List<Ware> list = map.get(location);
-
-                int index = list.indexOf(new Ware(target, 0));
-                if (index != -1) {
-                    List<Ware> result = new ArrayList<>(list.subList(index, list.size()));
-
-                    if (list.size() > index) {
-                        list.subList(index, list.size()).clear();
                     }
 
-                    return new InfoTarget(location, result);
+                    for (int k = 0; k < count; k++) {
+                        value.offer(graph[i][j] / count);
+                    }
                 }
             }
         }
-        return null;
-    }
 
-    private static boolean inMap(int y, int x, int n) {
-        return 0 <= y && y < n && 0 <= x && x < n;
-    }
-}
-
-class InfoTarget {
-    Location location;
-    List<Ware> wares;
-
-    public InfoTarget(Location location, List<Ware> wares) {
-        this.location = location;
-        this.wares = wares;
-    }
-}
-
-class Ware {
-    int num;
-    int dir;
-
-    public Ware(int num, int dir) {
-        this.num = num;
-        this.dir = dir;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
+        while (!location.isEmpty()) {
+            int[] now = location.pollLast();
+            graph[now[0]][now[1]] += value.pollLast();
         }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
+        return graph;
+    }
+
+    // (st_x, st_y)를 시작으로 제초제를 뿌려보는 함수
+    public List<Position> treeKiller(int st_x, int st_y) {
+
+        return new ArrayList<Position>();
+    }
+
+    public static void compareTreeKiller() {
+
+    }
+    // <--------------- 구현 해야 할 메소드 ---------------->
+
+    public static void main(String[] args) throws IOException {
+        // STEP 1. INPUT
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        N = Integer.parseInt(st.nextToken());
+        M = Integer.parseInt(st.nextToken());
+        K = Integer.parseInt(st.nextToken());
+        C = Integer.parseInt(st.nextToken());
+
+        graph = new int[N][N];
+        treeKillerMaps = new int[N][N];
+
+        for (int i = 0; i < N; i++) {
+            st = new StringTokenizer(br.readLine());
+            for (int j = 0; j < N; j++) {
+                graph[i][j] = Integer.parseInt(st.nextToken());
+            }
         }
-        Ware ware = (Ware) o;
-        return num == ware.num;
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(num);
-    }
-}
-
-class Location {
-    int y;
-    int x;
-
-    public Location(int y, int x) {
-        this.y = y;
-        this.x = x;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
+        // STEP 2. Simulation
+        for (int year = 0; year < M; year++) {
+            growTree();
+            graph = spreadTree();
+            compareTreeKiller();
         }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        Location location = (Location) o;
-        return y == location.y && x == location.x;
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(y, x);
+        System.out.println(result);
     }
 }
