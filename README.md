@@ -6,7 +6,7 @@
 
 | 💠 | 🍎 |   🍐    | 🍈 | 🥑 | 🥔 |
 | :--------: | :---------: |:-------:| :---------: | :---------: | :---------: |
-| [홍창기](https://github.com/infikei) | [김태수](https://github.com/kimtaesoo99) | [박성재](https://github.com/qkrtjdwo5662) | [정명희](https://github.com/jmhee28) | 지수영 | 정다운 |
+| [홍창기](https://github.com/infikei) | [김태수](https://github.com/kimtaesoo99) | [박성재](https://github.com/qkrtjdwo5662) | [정명희](https://github.com/jmhee28) | [지수영](https://github.com/SooYoungJi) | 정다운 |
 
 ## ✅ 규칙
 
