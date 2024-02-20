@@ -23,8 +23,8 @@
 | Week 2 | [아기상어 (백준 16236)](https://www.acmicpc.net/problem/16236) <br/> |
 | Week 3 | [인구 이동 (백준 16234)](https://www.acmicpc.net/problem/16234) <br/> [새로운 게임 2 (백준 17837)](https://www.acmicpc.net/problem/17837) <br/> |
 | Week 4 | [나무 박멸 (코드트리)](https://www.codetree.ai/training-field/frequent-problems/problems/tree-kill-all) <br/> |
-| Week 5 | [감시](https://acmicpc.net/problem/15683) <br/> [컨베이어 벨트 위의 로봇](https://acmicpc.net/problem/20055) <br/> |
-| Week 6 | []() <br/> []() <br/> |
+| Week 5 | [감시 (백준 15683)](https://acmicpc.net/problem/15683) <br/> [컨베이어 벨트 위의 로봇 (백준 20055)](https://acmicpc.net/problem/20055) <br/> |
+| Week 6 | [청소년 상어 (백준 19236)](https://www.acmicpc.net/problem/19236) <br/> [마법사 상어와 토네이도 (백준 20057)](https://www.acmicpc.net/problem/20057) <br/> |
 | Week 7 | []() <br/> []() <br/> |
 | Week 8 | []() <br/> []() <br/> |
 | Week 9 | []() <br/> []() <br/> |
