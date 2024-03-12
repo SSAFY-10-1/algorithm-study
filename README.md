@@ -26,6 +26,9 @@
 | Week 5 | [감시 (백준 15683)](https://acmicpc.net/problem/15683) <br/> [컨베이어 벨트 위의 로봇 (백준 20055)](https://acmicpc.net/problem/20055) <br/> |
 | Week 6 | [청소년 상어 (백준 19236)](https://www.acmicpc.net/problem/19236) <br/> [마법사 상어와 토네이도 (백준 20057)](https://www.acmicpc.net/problem/20057) <br/> [예술성 (코드트리)](https://www.codetree.ai/training-field/frequent-problems/problems/artistry) <br/> |
 | Week 7 | [상어 초등학교 (백준 21608)](https://www.acmicpc.net/problem/21608) <br/> [낚시왕 (백준 17143)](https://www.acmicpc.net/problem/17143) <br/> |
-| Week 8 | []() <br/> []() <br/> |
-| Week 9 | []() <br/> []() <br/> |
+| Week 8 | [마법사 상어와 비바라기 (백준 21610)](https://www.acmicpc.net/problem/21610) <br/> |
+| Week 9 | [마법사 상어와 파이어스톰](https://www.acmicpc.net/problem/20058) <br/> [테트로미노](https://www.acmicpc.net/problem/14500) <br/> |
 | Week 10 | []() <br/> []() <br/> |
+| Week 11 | []() <br/> []() <br/> |
+| Week 12 | []() <br/> []() <br/> |
+| Week 13 | []() <br/> []() <br/> |
