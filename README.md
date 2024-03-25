@@ -28,7 +28,7 @@
 | Week 7 | [상어 초등학교 (백준 21608)](https://www.acmicpc.net/problem/21608) <br/> [낚시왕 (백준 17143)](https://www.acmicpc.net/problem/17143) <br/> |
 | Week 8 | [마법사 상어와 비바라기 (백준 21610)](https://www.acmicpc.net/problem/21610) <br/> |
 | Week 9 | [마법사 상어와 파이어스톰 (백준 20058)](https://www.acmicpc.net/problem/20058) <br/> [테트로미노 (백준 14500)](https://www.acmicpc.net/problem/14500) <br/> |
-| Week 10 | []() <br/> []() <br/> |
+| Week 10 | [주사위굴리기](https://www.acmicpc.net/problem/14499) <br/> [상어중학교](https://www.acmicpc.net/problem/21609) <br/> |
 | Week 11 | []() <br/> []() <br/> |
 | Week 12 | []() <br/> []() <br/> |
 | Week 13 | []() <br/> []() <br/> |
