@@ -30,7 +30,8 @@ dirPair = {
 
 
 N, M, P, C, D = map(int, input().split())
-rdpPos = list(map(int, input().split())) # 루돌프 위치
+rdpx, rdpy = map(int, input().split())
+rdpPos = [rdpx - 1, rdpy - 1] # 루돌프 위치
 board = [[0] * N for _ in range(N) ] # val:1 산타, 
 santaInfos = [] # [[p, r, c, score, status]] status: 1: active, 0: 기절, -1: 탈락
 
@@ -94,7 +95,7 @@ def moveRDP(closeSanta): # 루돌프 돌진
     return [newRdp, direction]
 
 def moveSanta(santa): # 산타이동
-    p, x, y, score = santa
+    p, x, y, score, status = santa
     minDist = calcDist([x, y], rdpPos)
     newSanta = [p, x, y, score]
     direction = -1
@@ -103,7 +104,7 @@ def moveSanta(santa): # 산타이동
         ny = y + dy[d]
         if validPos(nx, ny):
             dist = calcDist([nx, ny], rdpPos)
-            if dist < minDist:
+            if dist < minDist and board[nx][ny] != 1:
                 minDist = dist
                 newSanta = [p, nx, ny, score]
                 direction = d
@@ -120,6 +121,8 @@ def moveAllSantas():
             continue
         board[x][y] = 0
         santa, direction = moveSanta(santa)
+        if direction == -1:
+            continue
         mx, my = santa[1], santa[2]        
         oppositeDir = dirPair[direction]
         if santa == rdpPos: ## 산타가 움직여서 충돌
