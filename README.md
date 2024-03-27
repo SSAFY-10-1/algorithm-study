@@ -4,9 +4,14 @@
 
 ## 🌱 스터디원
 
-| 💠 | 🍎 |   🍐    | 🍈 | 🥑 | 🥔 |
-| :--------: | :---------: |:-------:| :---------: | :---------: | :---------: |
-| [홍창기](https://github.com/infikei) | [김태수](https://github.com/kimtaesoo99) | [박성재](https://github.com/qkrtjdwo5662) | [정명희](https://github.com/jmhee28) | [지수영](https://github.com/SooYoungJi) | [정다운](https://github.com/daunjeong824) |
+| | 이름 | Github |
+| ---- | ---- | ---- |
+| 💠 | 홍창기 | [@infikei](https://github.com/infikei) |
+| 🍎 | 김태수 | [@kimtaesoo99](https://github.com/kimtaesoo99) |
+| 🍐 | 박성재 | [@qkrtjdwo5662](https://github.com/qkrtjdwo5662) |
+| 🍈 | 정명희 | [@jmhee28](https://github.com/jmhee28) |
+| 🥑 | 지수영 | [@SooYoungJi](https://github.com/SooYoungJi) |
+| 🥔 | 정다운 | [@daunjeong824](https://github.com/daunjeong824) |
 
 ## ✅ 규칙
 
@@ -27,8 +32,9 @@
 | Week 6 | [청소년 상어 (백준 19236)](https://www.acmicpc.net/problem/19236) <br/> [마법사 상어와 토네이도 (백준 20057)](https://www.acmicpc.net/problem/20057) <br/> [예술성 (코드트리)](https://www.codetree.ai/training-field/frequent-problems/problems/artistry) <br/> |
 | Week 7 | [상어 초등학교 (백준 21608)](https://www.acmicpc.net/problem/21608) <br/> [낚시왕 (백준 17143)](https://www.acmicpc.net/problem/17143) <br/> |
 | Week 8 | [마법사 상어와 비바라기 (백준 21610)](https://www.acmicpc.net/problem/21610) <br/> |
-| Week 9 | [마법사 상어와 파이어스톰 (백준 20058)](https://www.acmicpc.net/problem/20058) <br/> [테트로미노 (백준 14500)](https://www.acmicpc.net/problem/14500) <br/> |
-| Week 10 | [주사위굴리기](https://www.acmicpc.net/problem/14499) <br/> [상어중학교](https://www.acmicpc.net/problem/21609) <br/> |
+| Week 9 | [마법사 상어와 파이어스톰 (백준 20058)](https://www.acmicpc.net/problem/20058) <br/> [테트로미노 (백준 14500)](https://www.acmicpc.net/problem/14500) <br/> [왕실의 기사 대결 (코드트리)](https://www.codetree.ai/training-field/frequent-problems/problems/royal-knight-duel) <br/> |
+| Week 10 | [주사위 굴리기 (백준 14499)](https://www.acmicpc.net/problem/14499) <br/> [상어 중학교 (백준 21609)](https://www.acmicpc.net/problem/21609) <br/> [싸움땅 (코드트리)](https://www.codetree.ai/training-field/frequent-problems/problems/battle-ground) <br/> |
 | Week 11 | []() <br/> []() <br/> |
 | Week 12 | []() <br/> []() <br/> |
 | Week 13 | []() <br/> []() <br/> |
+| Week 14 | []() <br/> []() <br/> |
